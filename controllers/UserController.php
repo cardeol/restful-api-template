@@ -13,13 +13,8 @@ $app->add(function ($request, $response, $next) { // jsonp
 
     $route = $route_parts[1];
     
-    $only_users = [
-        'restricted',
-    ];
-
-    $only_admin = [
-        'admin'
-    ];
+    $only_users = ONLY_USERS;
+    $only_admin = ONLY_ADMIN;
     
     if(in_array($route , $only_users)) {
          if(!Helper::hasRole($request)) {
